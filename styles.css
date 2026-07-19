@@ -1714,7 +1714,13 @@ ul {
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
+
+/* --- Tablet (max-width: 1024px) --- */
 @media (max-width: 1024px) {
+    .section {
+        padding: 80px 0;
+    }
+
     .about-grid {
         gap: 48px;
     }
@@ -1733,28 +1739,71 @@ ul {
 
     .coverage-map-container {
         grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .coverage-map {
+        min-height: 350px;
+    }
+
+    .coverage-img {
+        height: 350px;
     }
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+    }
+
+    .cta-card {
+        padding: 48px 40px;
+    }
+
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-grid {
+        gap: 36px;
     }
 }
 
+/* --- Mobile Large (max-width: 768px) --- */
 @media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Navigation */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -300px;
-        width: 280px;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
         height: 100vh;
+        height: 100dvh;
         background: var(--dark);
         flex-direction: column;
         align-items: flex-start;
-        padding: 100px 24px 40px;
-        gap: 4px;
-        transition: var(--transition);
+        padding: 90px 24px 40px;
+        gap: 2px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
+        overflow-y: auto;
     }
 
     .nav-links.active {
@@ -1763,12 +1812,14 @@ ul {
 
     .nav-link {
         width: 100%;
-        padding: 12px 16px;
+        padding: 14px 16px;
         font-size: 1rem;
+        border-radius: var(--radius-sm);
     }
 
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
 
     .nav-phone span {
@@ -1779,14 +1830,38 @@ ul {
         display: none;
     }
 
+    /* Hero */
+    .hero-content {
+        padding-top: 80px;
+    }
+
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .hero-buttons .btn-lg {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-stats {
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 16px;
         justify-content: center;
+        padding: 24px 16px;
     }
 
     .stat-divider {
@@ -1794,71 +1869,190 @@ ul {
     }
 
     .stat-item {
-        min-width: 100px;
+        min-width: 40%;
+        flex: 1 1 40%;
+        text-align: center;
     }
 
     .stat-number {
         font-size: 2rem;
     }
 
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* About */
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
+    }
+
+    .about-images {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .about-img-main img {
+        height: 300px;
     }
 
     .about-img-secondary {
         right: 16px;
         bottom: -20px;
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
     }
 
     .about-experience-badge {
         left: 16px;
         top: -10px;
-        padding: 14px 20px;
+        padding: 12px 18px;
     }
 
     .exp-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .exp-text {
+        font-size: 0.65rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
     }
 
     .about-features {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
+    /* Services */
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
+    .service-card {
+        padding: 28px 24px;
+    }
+
+    .service-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+    }
+
+    /* Coverage */
+    .coverage-map {
+        min-height: 280px;
+    }
+
+    .coverage-img {
+        height: 280px;
+    }
+
+    .coverage-features {
+        gap: 12px;
+    }
+
+    .coverage-feature {
+        padding: 16px;
+    }
+
+    /* Why Choose Us */
     .why-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
+    .why-card {
+        padding: 28px 24px;
+    }
+
+    .why-number {
+        font-size: 2.5rem;
+    }
+
+    /* Testimonials */
     .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .testimonial-card {
+        padding: 24px;
+    }
+
+    /* CTA */
+    .cta {
+        padding: 60px 0;
     }
 
     .cta-card {
         grid-template-columns: 1fr;
-        padding: 40px 24px;
+        padding: 36px 24px;
+        gap: 32px;
+        text-align: center;
     }
 
     .cta-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
+    .cta-content p {
+        font-size: 0.95rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .cta-image {
+        display: none;
+    }
+
+    .cta-buttons .btn-lg {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Contact */
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-form-wrapper {
+        padding: 28px 20px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-form h3 {
+        font-size: 1.15rem;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer-top {
+        padding: 60px 0 32px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
     }
 
     .footer-bottom .container {
@@ -1866,38 +2060,441 @@ ul {
         text-align: center;
     }
 
-    .section {
-        padding: 70px 0;
+    /* Phone FAB */
+    .phone-fab {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Disable tilt on touch */
+    .service-card,
+    .why-card {
+        transform: none !important;
     }
 }
 
+/* --- Mobile Small (max-width: 480px) --- */
 @media (max-width: 480px) {
+    .section {
+        padding: 48px 0;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+        margin-bottom: 16px;
+    }
+
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.65rem;
+        margin-bottom: 16px;
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 24px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
+    .hero-buttons .btn-lg {
+        padding: 14px 24px;
+        font-size: 0.9rem;
     }
 
     .hero-stats {
-        flex-direction: column;
-        text-align: center;
+        padding: 20px 12px;
+        gap: 12px;
     }
 
+    .stat-item {
+        min-width: 45%;
+    }
+
+    .stat-number {
+        font-size: 1.7rem;
+    }
+
+    .stat-plus {
+        font-size: 1.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    /* About */
+    .about-img-main img {
+        height: 240px;
+    }
+
+    .about-img-secondary {
+        width: 110px;
+        height: 110px;
+        right: 8px;
+        bottom: -15px;
+        border-width: 4px;
+    }
+
+    .about-experience-badge {
+        padding: 10px 14px;
+        left: 8px;
+        top: -8px;
+    }
+
+    .exp-number {
+        font-size: 1.5rem;
+    }
+
+    .exp-text {
+        font-size: 0.6rem;
+    }
+
+    .feature-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 0.9rem;
+    }
+
+    .about-feature h4 {
+        font-size: 0.85rem;
+    }
+
+    .about-feature p {
+        font-size: 0.75rem;
+    }
+
+    /* Services */
+    .service-card {
+        padding: 24px 20px;
+    }
+
+    .service-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Coverage */
+    .coverage-map {
+        min-height: 220px;
+    }
+
+    .coverage-img {
+        height: 220px;
+    }
+
+    .map-hotspot {
+        transform: scale(0.85);
+    }
+
+    .cf-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 0.95rem;
+    }
+
+    .cf-info h4 {
+        font-size: 0.85rem;
+    }
+
+    .cf-info p {
+        font-size: 0.75rem;
+    }
+
+    /* Why Cards */
+    .why-card {
+        padding: 24px 20px;
+    }
+
+    .why-number {
+        font-size: 2rem;
+    }
+
+    .why-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+
+    .why-card h3 {
+        font-size: 1rem;
+    }
+
+    .why-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 0.88rem;
+        line-height: 1.7;
+    }
+
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+
+    .testimonial-author h4 {
+        font-size: 0.88rem;
+    }
+
+    .testimonial-author span {
+        font-size: 0.72rem;
+    }
+
+    /* CTA */
     .cta-card {
-        padding: 32px 20px;
+        padding: 28px 18px;
     }
 
-    .cta-buttons {
-        flex-direction: column;
+    .cta-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .cta-content p {
+        font-size: 0.88rem;
+    }
+
+    /* Contact */
+    .cc-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 0.95rem;
+    }
+
+    .cc-info h4 {
+        font-size: 0.75rem;
+    }
+
+    .cc-info p,
+    .cc-info a {
+        font-size: 0.9rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
     }
 
     .contact-form-wrapper {
-        padding: 24px;
+        padding: 24px 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-top {
+        padding: 48px 0 24px;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .footer-contact-item {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.78rem;
+    }
+
+    /* Phone FAB */
+    .phone-fab {
+        width: 46px;
+        height: 46px;
+        font-size: 1rem;
+        bottom: 16px;
+        left: 16px;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 16px;
+        right: 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Touch-friendly tap targets */
+    a, button, input, select, textarea {
+        min-height: 44px;
+    }
+}
+
+/* --- Very Small Mobile (max-width: 360px) --- */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .hero-badge span {
+        font-size: 0.68rem;
+    }
+
+    .stat-item {
+        min-width: 100%;
+    }
+
+    .cta-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .logo-name {
+        font-size: 1rem;
+    }
+}
+
+/* --- Landscape Mobile --- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .hero-content {
+        padding-top: 60px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+}
+
+/* --- Touch Device Adjustments --- */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:hover,
+    .why-card:hover,
+    .testimonial-card:hover {
+        transform: none;
+    }
+
+    .service-card:hover .service-icon,
+    .why-card:hover .why-icon {
+        transform: none;
+    }
+
+    .service-card:hover .service-icon {
+        background: var(--gradient-primary);
+        color: var(--white);
+    }
+
+    .why-card:hover .why-icon {
+        background: var(--gradient-primary);
+        color: var(--white);
+    }
+}
+
+/* --- Safe Area (notched phones) --- */
+@supports (padding: env(safe-area-inset-top)) {
+    .navbar {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .phone-fab {
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        left: calc(16px + env(safe-area-inset-left));
+    }
+
+    .back-to-top {
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        right: calc(16px + env(safe-area-inset-right));
+    }
+
+    .footer-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* --- Print --- */
+@media print {
+    .navbar, .hero-scroll, .back-to-top, .phone-fab,
+    .hamburger, .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .section {
+        padding: 30px 0;
+        page-break-inside: avoid;
     }
 }
